@@ -6,7 +6,7 @@ import { Contact } from './containers/contact/Contact.js';
 import { Login } from './containers/login/Login.js';
 import './App.css';
 
-function App() {
+export const App = () => {
   return(
       <Routes>
         <Route path="/" element={<Home />} />
@@ -17,5 +17,3 @@ function App() {
       </Routes>
   );
 }
-
-export default App;
