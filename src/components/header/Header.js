@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import './Header.css';
+import { MenuItemsArray } from '../menu items/MenuItems.js';
 
 export const Header = () => {
   return (
@@ -7,16 +8,7 @@ export const Header = () => {
       <h1>SAVA</h1>
       <nav>
         <ul>
-          <li><Link to="/" className="menu-item uppercase">Home</Link></li>
-          <li><Link to="/appointment" className="menu-item uppercase">Appointment</Link></li>
-          <li><Link to="/price" className="menu-item uppercase">Price</Link></li>
-          <li><Link to="/contact" className="menu-item uppercase">Contact</Link></li>
-          <li>
-            <Link to="/login" className="menu-item">
-              <i className="bi bi-suit-heart"></i>
-              <i className="bi bi-suit-heart-fill" hidden></i>
-            </Link>
-          </li>
+        {MenuItemsArray.map(({ title, url }) => <li><Link to={url} className="menu-item uppercase">{title}</Link></li>)}
         </ul>
       </nav>
     </header>
