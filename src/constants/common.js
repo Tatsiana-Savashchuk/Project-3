@@ -11,5 +11,5 @@ export const MENU_ITEMS_ARRAY = [
       </>
     , 
     url: "/login",
-},
+  },
 ];
