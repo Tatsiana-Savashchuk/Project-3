@@ -4,4 +4,4 @@ export const Price = () => {
   return (
     <Header />
   );
-}
+};

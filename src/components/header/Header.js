@@ -13,4 +13,4 @@ export const Header = () => {
       </nav>
     </header>
   );
-}
+};

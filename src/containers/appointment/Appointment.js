@@ -4,4 +4,4 @@ export const Appointment = () => {
   return (
     <Header />
   );
-}
+};

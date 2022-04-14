@@ -4,4 +4,4 @@ export const Contact = () => {
   return (
     <Header />
   );
-}
+};

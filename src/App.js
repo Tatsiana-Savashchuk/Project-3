@@ -16,4 +16,4 @@ export const App = () => {
       <Route path="login" element={<Login />} />
     </Routes>
   );
-}
+};

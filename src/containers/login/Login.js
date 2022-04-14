@@ -4,4 +4,4 @@ export const Login = () => {
   return (
     <Header />
   );
-}
+};

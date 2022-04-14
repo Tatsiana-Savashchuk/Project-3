@@ -1,8 +1,8 @@
 export const MENU_ITEMS_ARRAY = [
-  { title: 'Home', url: "/", }, 
-  { title: 'Appointment', url: "/appointment", }, 
-  { title: 'Price', url: "/price", }, 
-  { title: 'Contact', url: "/contact", }, 
+  { title: 'Home', url: "/" }, 
+  { title: 'Appointment', url: "/appointment" }, 
+  { title: 'Price', url: "/price" }, 
+  { title: 'Contact', url: "/contact" }, 
   {
     title:
       <> 
@@ -11,5 +11,5 @@ export const MENU_ITEMS_ARRAY = [
       </>
     , 
     url: "/login",
-  }
+},
 ];
