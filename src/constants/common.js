@@ -1,4 +1,4 @@
-export const MenuItemsArray = [
+export const MENU_ITEMS_ARRAY = [
   { title: 'Home', url: "/", }, 
   { title: 'Appointment', url: "/appointment", }, 
   { title: 'Price', url: "/price", }, 

@@ -8,12 +8,12 @@ import './App.css';
 
 export const App = () => {
   return(
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="appointment" element={<Appointment />} />
-        <Route path="price" element={<Price />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="login" element={<Login />} />
-      </Routes>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="appointment" element={<Appointment />} />
+      <Route path="price" element={<Price />} />
+      <Route path="contact" element={<Contact />} />
+      <Route path="login" element={<Login />} />
+    </Routes>
   );
 }
