@@ -1,3 +1,45 @@
 .uppercase {
   text-transform: uppercase;
 }
+
+.bold {
+  font-weight: bold;
+}
+
+button {
+  margin-top: 30px;
+  border-style: solid;
+  border-radius: 25px;
+  border-width: 3px;
+  border-color: #b55d4f;
+  padding: 15px;
+  background-color: white;
+  cursor: pointer;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: small;
+  font-weight: bold;
+  color: #b55d4f;
+}
+
+input, select {
+  border-style: solid;
+  border-radius: 25px;
+  border-width: 3px;
+  border-color: #75a2a5;
+  outline: none;
+  padding: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: #75a2a5;
+}
+
+input::placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+@media all and (min-width: 1000px) {
+  button:hover {
+    background-color: #ffc176;
+ }
+}
