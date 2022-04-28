@@ -1,7 +1,5 @@
-import { Header } from '../../components/header/Header.js';
+import { PageBuilder } from '../../components/pageBuilder/PageBuilder.js';
 
 export const Home = () => {
-  return (
-    <Header />
-  );
+  return <PageBuilder />;
 };
