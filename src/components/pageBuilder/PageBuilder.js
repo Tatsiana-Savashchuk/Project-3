@@ -1,7 +1,12 @@
 import { Header } from '../header/Header';
 import './PageBuilder.css';
 
-export const PageBuilder = ({ header = <Header />, sidebar, main, section }) => {
+export const PageBuilder = ({ 
+  header = <Header />, 
+  sidebar = null, 
+  main = null, 
+  section = null,
+}) => {
   return (
     <div className='page-builder'>   
       <div className='page-builder__header'>{header}</div>
