@@ -1,7 +1,7 @@
-import { Header } from '../../components/header/Header.js';
+import { PageBuilder } from '../../components/pageBuilder/PageBuilder.js';
 
 export const Home = () => {
   return (
-    <Header />
+    <PageBuilder sidebar='sidebar' main='main' section='section' />
   );
 };

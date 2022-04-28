@@ -1,7 +1,7 @@
-import { Header } from '../../components/header/Header.js';
+import { PageBuilder } from "../../components/pageBuilder/PageBuilder";
 
 export const Contact = () => {
   return (
-    <Header />
+    <PageBuilder sidebar='sidebar' main='main' section='section' />
   );
 };
