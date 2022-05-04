@@ -4,8 +4,10 @@ import { Home } from './containers/home/Home.js';
 import { Price } from './containers/price/Price.js';
 import { Contact } from './containers/contact/Contact.js';
 import { Login } from './containers/login/Login.js';
-import { RequiredAuthorization } from "./components/requiredAuthorization/RequiredAuthorization.js";
+import { RequiredNonAuthorization } from "./components/requiredNonAuthorization/RequiredNonAuthorization.js";
 import './App.css';
+import './components/button/Button.css';
+import './components/input/Input.css';
 
 export const App = () => {
   return(
@@ -15,9 +17,9 @@ export const App = () => {
       <Route path="price" element={<Price />} />
       <Route path="contact" element={<Contact />} />
       <Route path="login" element={
-        <RequiredAuthorization>
+        <RequiredNonAuthorization>
           <Login />
-        </RequiredAuthorization>
+        </RequiredNonAuthorization>
       } />
     </Routes>
   );

@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 
-export const RequiredAuthorization = ({ children }) => {
+export const RequiredNonAuthorization = ({ children }) => {
   if (localStorage.getItem('active')) {
     return <Navigate to="/" replace />;
   }
