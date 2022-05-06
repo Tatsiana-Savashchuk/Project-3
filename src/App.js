@@ -4,7 +4,7 @@ import { Home } from './containers/home/Home.js';
 import { Price } from './containers/price/Price.js';
 import { Contact } from './containers/contact/Contact.js';
 import { Login } from './containers/login/Login.js';
-import { RequiredNonAuthorization } from "./components/requiredNonAuthorization/RequiredNonAuthorization.js";
+import { UnauthorizedOnly } from "./components/unauthorizedOnly/UnauthorizedOnly.js";
 import './App.css';
 import './components/button/Button.css';
 import './components/input/Input.css';
@@ -17,9 +17,9 @@ export const App = () => {
       <Route path="price" element={<Price />} />
       <Route path="contact" element={<Contact />} />
       <Route path="login" element={
-        <RequiredNonAuthorization>
+        <UnauthorizedOnly>
           <Login />
-        </RequiredNonAuthorization>
+        </UnauthorizedOnly>
       } />
     </Routes>
   );

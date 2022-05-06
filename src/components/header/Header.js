@@ -1,12 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import './Header.css';
 import { uniqueId } from 'lodash';
-import { handleLogout } from "../../utils/handleLogout";
-import { checkStorageItem } from "../../utils/storageData";
+import { isUserLogged } from "../../utils/storageData";
+import { STORAGE_FIELDS, logout } from "../../utils/storageData";
 
 export const Header = () => {
   const location = useLocation();
-  const user = checkStorageItem('active');
+  const user = isUserLogged(STORAGE_FIELDS.ACTIVE);
 
   const menuItemsArray = [
     { title: 'Home', url: "/" }, 
@@ -15,8 +15,8 @@ export const Header = () => {
     { title: 'Contact', url: "/contact" }, 
     {
       title: user
-             ? <i className="bi bi-suit-heart-fill sign-out" onClick={handleLogout}></i> 
-             : <i className="bi bi-suit-heart sign-in"></i>, 
+        ? <i className="bi bi-suit-heart-fill sign-out" onClick={logout}></i> 
+        : <i className="bi bi-suit-heart sign-in"></i>, 
       url: user ? location.pathname : "/login",
     },
   ];
