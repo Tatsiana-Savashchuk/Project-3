@@ -1,7 +1,8 @@
-import { Header } from '../../components/header/Header.js';
+import { PageBuilder } from '../../components/pageBuilder/PageBuilder.js';
+import { LoginForm } from '../../components/loginForm/LoginForm.js';
 
 export const Login = () => {
   return (
-    <Header />
+    <PageBuilder main={<LoginForm />} />
   );
 };

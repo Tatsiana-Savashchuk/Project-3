@@ -1,0 +1,9 @@
+.login-form {
+  text-align: center;
+  color: #b55d4f;
+}
+
+.login-form__input {
+  border-color: #ffc176;
+  color: #ffc176;
+}
