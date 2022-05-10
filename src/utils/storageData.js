@@ -1,4 +1,4 @@
-export const STORAGE_FIELDS = { ACTIVE: 'active' };
+import { STORAGE_FIELDS } from "../constants/common";
 
 export const isUserLogged = () => {
   return Boolean(localStorage.getItem(STORAGE_FIELDS.ACTIVE));

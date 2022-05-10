@@ -2,7 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 import './Header.css';
 import { uniqueId } from 'lodash';
 import { isUserLogged } from "../../utils/storageData";
-import { STORAGE_FIELDS, logout } from "../../utils/storageData";
+import { logout } from "../../utils/storageData";
+import { STORAGE_FIELDS } from "../../constants/common";
 
 export const Header = () => {
   const location = useLocation();

@@ -3,8 +3,7 @@ import './Input.css';
 
 export const Input = ({ type = null, className, onChangeFunction = null }) => {
   const inputClassName = useMemo(() => {
-    let finalClassName = 'main-input ' + (className || '');
-    return finalClassName;
+    return 'main-input ' + (className || '');
   }, [className]);
 
   return (
