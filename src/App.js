@@ -6,8 +6,6 @@ import { Contact } from './containers/contact/Contact.js';
 import { Login } from './containers/login/Login.js';
 import { UnauthorizedOnly } from "./components/unauthorizedOnly/UnauthorizedOnly.js";
 import './App.css';
-import './components/button/Button.css';
-import './components/input/Input.css';
 
 export const App = () => {
   return(
