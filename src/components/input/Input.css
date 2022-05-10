@@ -1,4 +1,4 @@
-input, select {
+.main-input, select {
   border-style: solid;
   border-radius: 25px;
   border-width: 3px;
@@ -11,6 +11,6 @@ input, select {
   color: #75a2a5;
 }
 
-input::placeholder {
+.main-input::placeholder {
   color: rgba(0, 0, 0, 0.25);
 }

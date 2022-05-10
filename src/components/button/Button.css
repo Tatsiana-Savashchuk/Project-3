@@ -1,4 +1,4 @@
-button {
+.main-button {
   margin-top: 30px;
   border-style: solid;
   border-radius: 25px;
@@ -14,7 +14,7 @@ button {
 }
 
 @media all and (min-width: 1000px) {
-  button:hover {
+  .main-button:hover {
     background-color: #ffc176;
- }
+  }
 }

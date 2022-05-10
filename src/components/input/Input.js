@@ -1,5 +1,13 @@
-export const Input = (inputType = null, inputClassName = null, onChangeFunction = null) => {
+import { useMemo } from 'react';
+import './Input.css';
+
+export const Input = ({ type = null, className, onChangeFunction = null }) => {
+  const inputClassName = useMemo(() => {
+    let finalClassName = 'main-input ' + (className || '');
+    return finalClassName;
+  }, [className]);
+
   return (
-    <input type={inputType} className={inputClassName} onChange={onChangeFunction} />
+    <input type={type} className={inputClassName} onChange={onChangeFunction} />
   );
 };

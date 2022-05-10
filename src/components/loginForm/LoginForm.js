@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { loginAuthentication } from '../../api/authentication';
 import { Button } from '../button/Button';
+import { Input } from '../input/Input';
 import { STORAGE_FIELDS } from '../../utils/storageData';
 import './LoginForm.css';
 
@@ -19,7 +20,7 @@ export const LoginForm = () => {
     setPassword(e.target.value);
   };
 
-  const verification = (login, password, navigate) => async () => {
+  const verification = () => async () => {
     if (login && password) {
       const { statusCode, message } = await loginAuthentication(login, password);
         if (statusCode === 200) {
@@ -36,10 +37,10 @@ export const LoginForm = () => {
   return (
     <div className="login-form">
       <p className="uppercase bold">Login</p>
-      <input type="text" className="login-form__input login" onChange={onLoginChange} />
+      {<Input type="text" className="login-form__input login" onChangeFunction={onLoginChange} />}
       <p className="uppercase bold">Password</p>
-      <input type="password" className="login-form__input password" onChange={onPasswordChange} />
-      <br />{<Button className="uppercase login-form__button" onClickFuction={verification(login, password, navigate)} buttonName='Sign in' />}
+      {<Input type="password" className="login-form__input password" onChangeFunction={onPasswordChange} />}
+      <br />{<Button className="login-form__button" onClickFuction={verification} text='Sign in' uppercase />}
     </div>
   );
 };

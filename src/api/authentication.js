@@ -1,8 +1,8 @@
-import { PREFIX } from '../constants/common.js';
+import { BACKEND_ADDRESS } from '../constants/common.js';
 
 export const loginAuthentication = async (login, password) => {
   let queryResult;
-  await fetch(PREFIX + 'user/login', {
+  await fetch(BACKEND_ADDRESS + 'user/login', {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
