@@ -1,16 +1,28 @@
 import { useMemo } from 'react';
+import { Loader } from '../loader/Loader';
 import './Button.css';
 
-export const Button = ({ className, onClickFuction = null, text = null, uppercase = false }) => {
+export const Button = ({ className, onClickFuction = null, text = null, uppercase = false, isLoading = false }) => {
   const buttonClassName = useMemo(() => {
-    let finalClassName = 'main-button ' + (className || '');
+    let finalClassName = 'main-button' + ((' ' + className) || '');
     if (uppercase) {
-      return finalClassName + ' uppercase';
+      finalClassName += ' uppercase';
+    }
+    if (isLoading) {
+      finalClassName += ' main-button-loading';
     }
     return finalClassName;
-  }, [className, uppercase]);
+  }, [className, uppercase, isLoading]);
+
+  const buttonText = useMemo(() => {
+    if (isLoading) {
+      return <Loader />;
+    }
+  }, [isLoading]);
   
   return (
-    <button className={buttonClassName} onClick={onClickFuction}>{text}</button>
+    <div className='button-wrapper'>
+      <button className={buttonClassName} onClick={onClickFuction}>{text}{buttonText}</button>
+    </div>
   );
 };
