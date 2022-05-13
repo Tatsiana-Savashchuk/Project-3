@@ -34,16 +34,18 @@ export const LoginForm = () => {
     } else {
         alert('Wrong login or password');
     }
-    return setIsLoading(false);
+    setIsLoading(false);
   }
   
   return (
     <div className="login-form">
       <p className="uppercase bold">Login</p>
-      <Input type="text" className="login-form__input login" onChangeFunction={onLoginChange} isLoading={isloading} />
+      <Input type="text" className="login-form__input login" onChangeFunction={onLoginChange} disabled={isloading} />
       <p className="uppercase bold">Password</p>
-      <Input type="password" className="login-form__input password" onChangeFunction={onPasswordChange} isLoading={isloading} />
-      <Button className="login-form__button" onClickFuction={verification} text='Sign in' uppercase isLoading={isloading} />
+      <Input type="password" className="login-form__input password" onChangeFunction={onPasswordChange} disabled={isloading} />
+      <div className='login-form__button-wrapper'>
+        <Button className="login-form__button" onClickFuction={verification} text='Sign in' uppercase isLoading={isloading} />
+      </div>
     </div>
   );
 };

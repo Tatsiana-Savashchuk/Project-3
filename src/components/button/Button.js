@@ -13,16 +13,10 @@ export const Button = ({ className, onClickFuction = null, text = null, uppercas
     }
     return finalClassName;
   }, [className, uppercase, isLoading]);
-
-  const buttonText = useMemo(() => {
-    if (isLoading) {
-      return <Loader />;
-    }
-  }, [isLoading]);
   
   return (
-    <div className='button-wrapper'>
-      <button className={buttonClassName} onClick={onClickFuction}>{text}{buttonText}</button>
-    </div>
+    <>
+      <button className={buttonClassName} onClick={onClickFuction}>{text}{isLoading && <Loader />}</button>
+    </>
   );
 };
