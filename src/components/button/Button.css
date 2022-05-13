@@ -1,16 +1,23 @@
 .main-button {
+  align-items: center;
+  display: flex;
   margin-top: 30px;
   border-style: solid;
-  border-radius: 25px;
-  border-width: 3px;
+  border-radius: 24px;
+  border-width: 2px;
   border-color: #b55d4f;
-  padding: 15px;
+  width: fit-content;
+  padding: 14px;
   background-color: white;
   cursor: pointer;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: small;
   font-weight: bold;
   color: #b55d4f;
+}
+
+.main-button-loading {
+  pointer-events: none;
 }
 
 @media all and (min-width: 1000px) {

@@ -1,14 +1,20 @@
 .main-input, select {
   border-style: solid;
-  border-radius: 25px;
-  border-width: 3px;
+  border-radius: 24px;
+  border-width: 2px;
   border-color: #75a2a5;
   outline: none;
   padding: 10px;
+  background-color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
   text-align: center;
   color: #75a2a5;
+}
+
+.main-input-loading {
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .main-input::placeholder {
