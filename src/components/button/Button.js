@@ -15,8 +15,6 @@ export const Button = ({ className, onClickFuction = null, text = null, uppercas
   }, [className, uppercase, isLoading]);
   
   return (
-    <>
-      <button className={buttonClassName} onClick={onClickFuction}>{text}{isLoading && <Loader />}</button>
-    </>
+    <button className={buttonClassName} onClick={onClickFuction}>{text}{isLoading && <Loader />}</button>
   );
 };

@@ -3,7 +3,11 @@ import './Input.css';
 
 export const Input = ({ type = null, className, onChangeFunction = null, disabled = false }) => {
   const inputClassName = useMemo(() => {
-    return 'main-input ' + (className || '') + (disabled ? ' main-input-loading' : '');
+    let finalClassName = 'main-input ' + (className || '');
+    if (disabled) {
+      finalClassName += ' main-input-loading';
+    }
+    return finalClassName;
   }, [className, disabled]);
 
   return (
