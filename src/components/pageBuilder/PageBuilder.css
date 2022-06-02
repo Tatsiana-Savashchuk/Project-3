@@ -25,6 +25,7 @@
 }
 
 .page-builder__main {
+  flex-direction: column;
   grid-area: main;
 }
 
