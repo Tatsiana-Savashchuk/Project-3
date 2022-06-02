@@ -4,6 +4,7 @@ import { loginAuthentication } from '../../api/authentication';
 import { Button } from '../button/Button';
 import { Input } from '../input/Input';
 import { STORAGE_FIELDS } from '../../constants/common';
+import { showMessage } from '../../utils/showMessage';
 import './LoginForm.css';
 
 export const LoginForm = () => {
@@ -29,10 +30,10 @@ export const LoginForm = () => {
           localStorage.setItem(STORAGE_FIELDS.ACTIVE, login);
           navigate(-1);
         } else {
-          alert(message);
+          showMessage(message);
         }
     } else {
-        alert('Wrong login or password');
+        showMessage('Wrong login or password');
     }
     setIsLoading(false);
   }

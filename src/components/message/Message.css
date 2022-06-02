@@ -1,0 +1,17 @@
+.message {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 20px;
+  border-color: #ffc176;
+  width: 20%;
+  padding: 60px;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-weight: bold;
+  text-align: center;
+  color: #ffc176;
+}

@@ -1,4 +1,5 @@
 import { Header } from '../header/Header';
+import { Message } from '../message/Message';
 import './PageBuilder.css';
 
 export const PageBuilder = ({ 
@@ -13,6 +14,7 @@ export const PageBuilder = ({
       <aside className='page-builder__aside'>{sidebar}</aside>
       <main className='page-builder__main'>{main}</main>
       <section className='page-builder__section'>{section}</section>
+      <Message />
     </div>
   );
 };
