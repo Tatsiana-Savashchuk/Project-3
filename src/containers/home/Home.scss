@@ -1,0 +1,24 @@
+@import '../../assets/color.scss';
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.home-content__header {
+  margin: 0;
+  font-size: 3em;
+  color: $MATRIX;
+}
+
+.home-content__header__company-name {
+  font-weight: bold;
+}
+
+.home-content__description {
+  margin: 0;
+  margin-top: 15px;
+  color: $ZORBA;
+}

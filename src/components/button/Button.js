@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { Loader } from '../loader/Loader';
-import './Button.css';
+import './Button.scss';
 
 export const Button = ({ className, onClickFuction = null, text = null, uppercase = false, isLoading = false }) => {
   const buttonClassName = useMemo(() => {

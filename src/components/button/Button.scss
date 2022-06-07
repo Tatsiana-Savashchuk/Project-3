@@ -1,0 +1,34 @@
+@import '../../assets/color.scss';
+@import '../../assets/screenSize.scss';
+
+.main-button {
+  align-items: center;
+  display: flex;
+  margin-top: 30px;
+  border: {
+    style: solid;
+    radius: 24px;
+    width: 2px;
+    color: $MATRIX;
+  }
+  width: fit-content;
+  padding: 14px;
+  background-color: white;
+  cursor: pointer;
+  font: {
+    family: Verdana, Geneva, Tahoma, sans-serif;
+    size: small;
+    weight: bold;
+  }
+  color: $MATRIX;
+}
+
+.main-button-loading {
+  pointer-events: none;
+}
+
+@media screen and (min-width: $DESCTOPS_AND_LARGE_SCREENS_MIN) {
+  .main-button:hover {
+    background-color: $MACARONI_AND_CHEESE;
+  }
+}
