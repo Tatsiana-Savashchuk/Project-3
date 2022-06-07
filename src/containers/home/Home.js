@@ -11,8 +11,8 @@ const HomeContent = () => {
 
   return (
     <div className='home-content'>
-      <p className='home-content-header'>manicure studio <br /><span className="uppercase home-content-header-company-name">SAVA</span></p>
-      <p className='home-content-description'>we take care of every client's nails</p>
+      <p className='home-content__header'>manicure studio <br /><span className="uppercase home-content__header__company-name">SAVA</span></p>
+      <p className='home-content__description'>we take care of every client's nails</p>
       <Button text='to make an appointment' onClickFuction={goToAppointment} uppercase />
     </div>
   )
