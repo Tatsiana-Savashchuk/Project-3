@@ -1,0 +1,32 @@
+@import '../../assets/color.scss';
+
+.contact-content {
+  text-align: center;
+}
+
+.contact-content__title {
+  margin-top: 40px;
+  color: $MATRIX;
+}
+
+.contact-content__name, .contact-content__phone {
+  display: inline-block;
+  margin: 0;
+  border: {
+    style: solid;
+    radius: 24px;
+    width: 2px;
+    color: $GUMBO;
+  }
+  width: 170px;
+  padding: 8px;
+  font-size: small;
+  text-decoration: none;
+  color: $GUMBO;
+}
+
+.contact-content__instagram {
+  font-size: x-large;
+  text-decoration: none;
+  color: $GUMBO;
+}
