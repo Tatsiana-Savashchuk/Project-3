@@ -1,7 +1,32 @@
 import { PageBuilder } from '../../components/pageBuilder/PageBuilder.js';
 import { Button } from '../../components/button/Button.js';
 import { useNavigate } from 'react-router-dom';
-import './Home.scss';
+import { COLORS } from '../../constants/common';
+import styled from "styled-components";
+
+const Div = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+`;
+
+const Header = styled.p`
+  margin: 0;
+  font-size: 3em;
+  color: ${COLORS.MATRIX};
+`;
+
+const Description =  styled.p`
+  margin: 0;
+  margin-top: 15px;
+  color: ${COLORS.ZORBA};
+`;
+
+const CompanyName = styled.span`
+  font-weight: bold;
+  text-transform: uppercase;
+`;
 
 const HomeContent = () => {
   const navigate = useNavigate();
@@ -10,11 +35,11 @@ const HomeContent = () => {
   }
 
   return (
-    <div className='home-content'>
-      <p className='home-content__header'>manicure studio <br /><span className="uppercase home-content__header__company-name">SAVA</span></p>
-      <p className='home-content__description'>we take care of every client's nails</p>
+    <Div>
+      <Header>manicure studio <br /><CompanyName>SAVA</CompanyName></Header>
+      <Description>we take care of every client's nails</Description>
       <Button text='to make an appointment' onClickFuction={goToAppointment} uppercase />
-    </div>
+    </Div>
   )
 }
 

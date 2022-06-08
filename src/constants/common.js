@@ -1,2 +1,24 @@
 export const BACKEND_ADDRESS = 'https://it-academy-js-api-zmicerboksha.vercel.app/api/st/';
 export const STORAGE_FIELDS = { ACTIVE: 'active' };
+export const COLORS = {
+  MATRIX: "#b55d4f",
+  MACARONI_AND_CHEESE: "#ffc176",
+  KARRY: "#ffebd0",
+  KARRY_TRANSPARENT: "#ffebd07e",
+  GUMBO: "#75a2a5",
+  ZORBA: "#9e9791",
+  ZORBA_TRANSPARENT: "#999592",
+  WHITE_TRANSPARENT: "rgba(255, 255, 255, 0.9)",
+  BLACK_TRANSPARENT: "rgba(0, 0, 0, 0.25)",
+}
+export const SCREEN_SIZE = {
+  MOBILE_DEVICES_MIN: '320px',
+  MOBILE_DEVICES_MAX: '480px',
+  IPADS_AND_TABLETS_MIN: '481px',
+  IPADS_AND_TABLETS_MAX: '768px',
+  SMALL_SCREENS_AND_LAPTOPS_MIN: '769px',
+  SMALL_SCREENS_AND_LAPTOPS_MAX: '1024px',
+  DESCTOPS_AND_LARGE_SCREENS_MIN: '1025px',
+  DESCTOPS_AND_LARGE_SCREENS_MAX: '1200px',
+  EXTRA_LARGE_SCREENS_AND_TV_MIN: '1201px',
+}
