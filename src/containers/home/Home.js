@@ -2,7 +2,8 @@ import { PageBuilder } from '../../components/pageBuilder/PageBuilder.js';
 import { Button } from '../../components/button/Button.js';
 import { useNavigate } from 'react-router-dom';
 import { COLORS } from '../../assets/colors/colors.js';
-import styled from "styled-components";
+import { PATHS } from '../../constants/common.js';
+import styled from 'styled-components';
 
 const HomeWrapper = styled.div`
   display: flex;
@@ -31,14 +32,14 @@ const CompanyName = styled.span`
 const HomeContent = () => {
   const navigate = useNavigate();
   const goToAppointment = () => {
-    navigate('/appointment');
+    navigate(PATHS.APPOINTMENT);
   }
 
   return (
     <HomeWrapper>
       <Header>manicure studio <br /><CompanyName>SAVA</CompanyName></Header>
       <Description>we take care of every client's nails</Description>
-      <Button text='to make an appointment' onClickFuction={goToAppointment} uppercase />
+      <Button text="to make an appointment" onClickFuction={goToAppointment} uppercase />
     </HomeWrapper>
   )
 }

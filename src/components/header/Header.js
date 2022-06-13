@@ -3,22 +3,22 @@ import './Header.css';
 import { uniqueId } from 'lodash';
 import { isUserLogged } from "../../utils/storageData";
 import { logout } from "../../utils/storageData";
-import { STORAGE_FIELDS } from "../../constants/common";
+import { STORAGE_FIELDS, PATHS } from "../../constants/common";
 
 export const Header = () => {
   const location = useLocation();
   const user = isUserLogged(STORAGE_FIELDS.ACTIVE);
 
   const menuItemsArray = [
-    { title: 'Home', url: "/" }, 
-    { title: 'Appointment', url: "/appointment" }, 
-    { title: 'Price', url: "/price" },
-    { title: 'Contact', url: "/contact" }, 
+    { title: 'Home', url: PATHS.HOME }, 
+    { title: 'Appointment', url: PATHS.APPOINTMENT }, 
+    { title: 'Price', url: PATHS.PRICE },
+    { title: 'Contact', url: PATHS.CONTACT }, 
     {
       title: user
         ? <i className="bi bi-suit-heart-fill sign-out" onClick={logout}></i> 
         : <i className="bi bi-suit-heart sign-in"></i>, 
-      url: user ? location.pathname : "/login",
+      url: user ? location.pathname : PATHS.LOGIN,
     },
   ];
 

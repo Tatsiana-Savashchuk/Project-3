@@ -1,23 +1,33 @@
 const SIZE = {
-  MOBILE_DEVICES_MIN: '320px',
-  MOBILE_DEVICES_MAX: '480px',
-  IPADS_AND_TABLETS_MIN: '481px',
-  IPADS_AND_TABLETS_MAX: '768px',
-  SMALL_SCREENS_AND_LAPTOPS_MIN: '769px',
-  SMALL_SCREENS_AND_LAPTOPS_MAX: '1024px',
-  DESCTOPS_AND_LARGE_SCREENS_MIN: '1025px',
-  DESCTOPS_AND_LARGE_SCREENS_MAX: '1200px',
-  EXTRA_LARGE_SCREENS_AND_TV_MIN: '1201px',
+  min: {
+    MOBILE_DEVICES: 320,
+    TABLETS: 481,
+    SMALL_SCREENS_AND_LAPTOPS: 769,
+    DESCTOPS_AND_LARGE_SCREENS: 1025,
+    EXTRA_LARGE_SCREENS_AND_TV: 1201,
+  },
+  max: {
+    MOBILE_DEVICES: 480,
+    TABLETS: 768,
+    SMALL_SCREENS_AND_LAPTOPS: 1024,
+    DESCTOPS_AND_LARGE_SCREENS: 1200,
+  },
 };
 
+const getMedia = (size, min) => `@media screen and (${min ? `min-width:` : `max-width:`} ${size}px)`
+
 export const DEVICE = {
-  MOBILE_DEVICES_MIN: `@media screen and (min-width: ${SIZE.MOBILE_DEVICES_MIN})`,
-  MOBILE_DEVICES_MAX: `@media screen and (max-width: ${SIZE.MOBILE_DEVICES_MAX})`,
-  IPADS_AND_TABLETS_MIN: `@media screen and (min-width: ${SIZE.IPADS_AND_TABLETS_MIN})`,
-  IPADS_AND_TABLETS_MAX: `@media screen and (max-width: ${SIZE.IPADS_AND_TABLETS_MAX})`,
-  SMALL_SCREENS_AND_LAPTOPS_MIN: `@media screen and (min-width: ${SIZE.SMALL_SCREENS_AND_LAPTOPS_MIN})`,
-  SMALL_SCREENS_AND_LAPTOPS_MAX: `@media screen and (max-width: ${SIZE.SMALL_SCREENS_AND_LAPTOPS_MAX})`,
-  DESCTOPS_AND_LARGE_SCREENS_MIN: `@media screen and (min-width: ${SIZE.DESCTOPS_AND_LARGE_SCREENS_MIN})`,
-  DESCTOPS_AND_LARGE_SCREENS_MAX: `@media screen and (max-width: ${SIZE.DESCTOPS_AND_LARGE_SCREENS_MAX})`,
-  EXTRA_LARGE_SCREENS_AND_TV_MIN: `@media screen and (min-width: ${SIZE.EXTRA_LARGE_SCREENS_AND_TV_MIN})`,
+  min: {
+    MOBILE_DEVICES: getMedia(SIZE.min.MOBILE_DEVICES, true),
+    TABLETS: getMedia(SIZE.min.TABLETS, true),
+    SMALL_SCREENS_AND_LAPTOPS: getMedia(SIZE.min.SMALL_SCREENS_AND_LAPTOPS, true),
+    DESCTOPS_AND_LARGE_SCREENS: getMedia(SIZE.min.DESCTOPS_AND_LARGE_SCREENS, true),
+    EXTRA_LARGE_SCREENS_AND_TV: getMedia(SIZE.min.EXTRA_LARGE_SCREENS_AND_TV, true),
+  },
+  max: {
+    MOBILE_DEVICES: getMedia(SIZE.MOBILE_DEVICES_MAX, false),
+    TABLETS: getMedia(SIZE.max.TABLETS, false),
+    SMALL_SCREENS_AND_LAPTOPS: getMedia(SIZE.max.SMALL_SCREENS_AND_LAPTOPS, false),
+    DESCTOPS_AND_LARGE_SCREENS: getMedia(SIZE.max.DESCTOPS_AND_LARGE_SCREENS, false)
+  },
 };

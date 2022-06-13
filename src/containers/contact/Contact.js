@@ -1,6 +1,6 @@
-import { PageBuilder } from "../../components/pageBuilder/PageBuilder";
-import { COLORS } from "../../assets/colors/colors";
-import styled, { css } from "styled-components";
+import { PageBuilder } from '../../components/pageBuilder/PageBuilder';
+import { COLORS } from '../../assets/colors/colors';
+import styled, { css } from 'styled-components';
 
 const contactInformationStyle = css`
   display: inline-block;
@@ -46,8 +46,14 @@ const ContactContent = () => {
       <Title>Phone number</Title>
       <Phone href="tel:+375298997516">+375 29 899 75 16</Phone>
       <Title>Instagram</Title>
-      <Instagram className="bi bi-instagram" href="https://www.instagram.com/" target="_blank" rel="noreferrer"> </Instagram>
-  </Section>
+      <Instagram 
+        className="bi bi-instagram"
+        href="https://www.instagram.com/"
+        target="_blank"
+        rel="noreferrer"
+      > 
+      </Instagram>
+    </Section>
   )
 }
 

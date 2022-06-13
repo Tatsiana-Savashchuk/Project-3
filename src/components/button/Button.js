@@ -1,7 +1,7 @@
 import { Loader } from '../loader/Loader';
 import { COLORS } from '../../assets/colors/colors';
 import { DEVICE } from '../../assets/devices/devices';
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const ButtonStyle = styled.button`
   align-items: center;
@@ -17,8 +17,8 @@ const ButtonStyle = styled.button`
   font-size: small;
   font-weight: bold;
   color: ${COLORS.MATRIX};
-  pointer-events: ${({isLoading}) => isLoading ? 'none' : 'auto'};
-  ${DEVICE.DESCTOPS_AND_LARGE_SCREENS_MIN} {
+  pointer-events: ${({ isLoading }) => isLoading ? 'none' : 'auto'};
+  ${DEVICE.min.DESCTOPS_AND_LARGE_SCREENS} {
     :hover {
       background-color: ${COLORS.MACARONI_AND_CHEESE};
     }
@@ -28,6 +28,8 @@ const ButtonStyle = styled.button`
 export const Button = ({ className, onClickFuction = null, text = null, isLoading = false }) => {
   
   return (
-    <ButtonStyle className={className} onClick={onClickFuction} isLoading={isLoading}>{text}{isLoading && <Loader />}</ButtonStyle>
+    <ButtonStyle className={className} onClick={onClickFuction} isLoading={isLoading}>
+      {text}{isLoading && <Loader />}
+    </ButtonStyle>
   );
 };
