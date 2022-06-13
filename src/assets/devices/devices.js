@@ -1,33 +1,33 @@
 const SIZE = {
-  min: {
-    MOBILE_DEVICES: 320,
-    TABLETS: 481,
-    SMALL_SCREENS_AND_LAPTOPS: 769,
-    DESCTOPS_AND_LARGE_SCREENS: 1025,
-    EXTRA_LARGE_SCREENS_AND_TV: 1201,
+  MIN: {
+    MOBILE: 320,
+    TABLET: 481,
+    LAPTOP: 769,
+    DESCTOP: 1025,
+    DESCTOP_L: 1201,
   },
-  max: {
-    MOBILE_DEVICES: 480,
-    TABLETS: 768,
-    SMALL_SCREENS_AND_LAPTOPS: 1024,
-    DESCTOPS_AND_LARGE_SCREENS: 1200,
+  MAX: {
+    MOBILE: 480,
+    TABLET: 768,
+    LAPTOP: 1024,
+    DESCTOP: 1200,
   },
 };
 
 const getMedia = (size, min) => `@media screen and (${min ? `min-width:` : `max-width:`} ${size}px)`
 
 export const DEVICE = {
-  min: {
-    MOBILE_DEVICES: getMedia(SIZE.min.MOBILE_DEVICES, true),
-    TABLETS: getMedia(SIZE.min.TABLETS, true),
-    SMALL_SCREENS_AND_LAPTOPS: getMedia(SIZE.min.SMALL_SCREENS_AND_LAPTOPS, true),
-    DESCTOPS_AND_LARGE_SCREENS: getMedia(SIZE.min.DESCTOPS_AND_LARGE_SCREENS, true),
-    EXTRA_LARGE_SCREENS_AND_TV: getMedia(SIZE.min.EXTRA_LARGE_SCREENS_AND_TV, true),
+  MIN: {
+    MOBILE: getMedia(SIZE.MIN.MOBILE, true),
+    TABLET: getMedia(SIZE.MIN.TABLET, true),
+    LAPTOP: getMedia(SIZE.MIN.LAPTOP, true),
+    DESCTOP: getMedia(SIZE.MIN.DESCTOP, true),
+    DESCTOP_L: getMedia(SIZE.MIN.DESCTOP_L, true),
   },
-  max: {
-    MOBILE_DEVICES: getMedia(SIZE.MOBILE_DEVICES_MAX, false),
-    TABLETS: getMedia(SIZE.max.TABLETS, false),
-    SMALL_SCREENS_AND_LAPTOPS: getMedia(SIZE.max.SMALL_SCREENS_AND_LAPTOPS, false),
-    DESCTOPS_AND_LARGE_SCREENS: getMedia(SIZE.max.DESCTOPS_AND_LARGE_SCREENS, false)
+  MAX: {
+    MOBILE: getMedia(SIZE.MAX.MOBILE, false),
+    TABLET: getMedia(SIZE.MAX.TABLET, false),
+    LAPTOP: getMedia(SIZE.MAX.LAPTOP, false),
+    DESCTOP: getMedia(SIZE.MAX.DESCTOP, false)
   },
 };

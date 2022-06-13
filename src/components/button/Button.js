@@ -18,7 +18,7 @@ const ButtonStyle = styled.button`
   font-weight: bold;
   color: ${COLORS.MATRIX};
   pointer-events: ${({ isLoading }) => isLoading ? 'none' : 'auto'};
-  ${DEVICE.min.DESCTOPS_AND_LARGE_SCREENS} {
+  ${DEVICE.MIN.DESCTOP} {
     :hover {
       background-color: ${COLORS.MACARONI_AND_CHEESE};
     }
