@@ -1,10 +1,10 @@
 import { PageBuilder } from '../../components/pageBuilder/PageBuilder.js';
 import { Button } from '../../components/button/Button.js';
 import { useNavigate } from 'react-router-dom';
-import { COLORS } from '../../constants/common';
+import { COLORS } from '../../assets/colors/colors.js';
 import styled from "styled-components";
 
-const Div = styled.div`
+const HomeWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -35,11 +35,11 @@ const HomeContent = () => {
   }
 
   return (
-    <Div>
+    <HomeWrapper>
       <Header>manicure studio <br /><CompanyName>SAVA</CompanyName></Header>
       <Description>we take care of every client's nails</Description>
       <Button text='to make an appointment' onClickFuction={goToAppointment} uppercase />
-    </Div>
+    </HomeWrapper>
   )
 }
 

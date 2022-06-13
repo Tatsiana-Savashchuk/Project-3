@@ -1,14 +1,12 @@
 import { PageBuilder } from "../../components/pageBuilder/PageBuilder";
-import { COLORS } from '../../constants/common';
+import { COLORS } from "../../assets/colors/colors";
 import styled, { css } from "styled-components";
 
-const styleSample = css`
+const contactInformationStyle = css`
   display: inline-block;
   margin: 0;
-  border-style: solid;
+  border: 2px ${COLORS.GUMBO} solid;
   border-radius: 24px;
-  border-width: 2px;
-  border-color: ${COLORS.GUMBO};
   width: 170px;
   padding: 8px;
   font-size: small;
@@ -28,16 +26,16 @@ const Title = styled.p`
 `;
 
 const Name = styled.p`
-${styleSample}
+  ${contactInformationStyle}
 `;
 const Phone = styled.a`
-${styleSample}
-text-decoration: none;
+  ${contactInformationStyle}
+  text-decoration: none;
 `;
 const Instagram = styled.a`
-font-size: x-large;
-text-decoration: none;
-color: ${COLORS.GUMBO};
+  font-size: 24px;
+  text-decoration: none;
+  color: ${COLORS.GUMBO};
 `;
 
 const ContactContent = () => {

@@ -1,33 +1,33 @@
 import { Loader } from '../loader/Loader';
-import { COLORS, SCREEN_SIZE } from '../../constants/common';
+import { COLORS } from '../../assets/colors/colors';
+import { DEVICE } from '../../assets/devices/devices';
 import styled from "styled-components";
 
-export const Button = ({ onClickFuction = null, text = null, isLoading = false }) => {
-  const MainButton = styled.button`
-    align-items: center;
-    display: flex;
-    margin-top: 30px;
-    border-style: solid;
-    border-radius: 24px;
-    border-width: 2px;
-    border-color: ${COLORS.MATRIX};
-    width: fit-content;
-    padding: 14px;
-    background-color: white;
-    cursor: pointer;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: small;
-    font-weight: bold;
-    color: ${COLORS.MATRIX};
-    pointer-events: ${isLoading ? 'none' : 'auto'};
-    @media screen and (min-width: ${SCREEN_SIZE.DESCTOPS_AND_LARGE_SCREENS_MIN}) {
-      :hover {
-        background-color: ${COLORS.MACARONI_AND_CHEESE};
-      }
+const ButtonStyle = styled.button`
+  align-items: center;
+  display: flex;
+  margin-top: 30px;
+  border: 2px ${COLORS.MATRIX} solid;
+  border-radius: 24px;
+  width: fit-content;
+  padding: 14px;
+  background-color: white;
+  cursor: pointer;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: small;
+  font-weight: bold;
+  color: ${COLORS.MATRIX};
+  pointer-events: ${({isLoading}) => isLoading ? 'none' : 'auto'};
+  ${DEVICE.DESCTOPS_AND_LARGE_SCREENS_MIN} {
+    :hover {
+      background-color: ${COLORS.MACARONI_AND_CHEESE};
     }
-  `;
+  }
+`;
+
+export const Button = ({ className, onClickFuction = null, text = null, isLoading = false }) => {
   
   return (
-    <MainButton onClick={onClickFuction}>{text}{isLoading && <Loader />}</MainButton>
+    <ButtonStyle className={className} onClick={onClickFuction} isLoading={isLoading}>{text}{isLoading && <Loader />}</ButtonStyle>
   );
 };
