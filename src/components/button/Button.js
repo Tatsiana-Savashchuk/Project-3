@@ -1,20 +1,35 @@
-import { useMemo } from 'react';
 import { Loader } from '../loader/Loader';
-import './Button.scss';
+import { COLORS } from '../../assets/colors/colors';
+import { DEVICE } from '../../assets/devices/devices';
+import styled from 'styled-components';
 
-export const Button = ({ className, onClickFuction = null, text = null, uppercase = false, isLoading = false }) => {
-  const buttonClassName = useMemo(() => {
-    let finalClassName = 'main-button' + ((' ' + className) || '');
-    if (uppercase) {
-      finalClassName += ' uppercase';
+const ButtonStyle = styled.button`
+  align-items: center;
+  display: flex;
+  margin-top: 30px;
+  border: 2px ${COLORS.MATRIX} solid;
+  border-radius: 24px;
+  width: fit-content;
+  padding: 14px;
+  background-color: white;
+  cursor: pointer;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: small;
+  font-weight: bold;
+  color: ${COLORS.MATRIX};
+  pointer-events: ${({ isLoading }) => isLoading ? 'none' : 'auto'};
+  ${DEVICE.MIN.DESCTOP} {
+    :hover {
+      background-color: ${COLORS.MACARONI_AND_CHEESE};
     }
-    if (isLoading) {
-      finalClassName += ' main-button-loading';
-    }
-    return finalClassName;
-  }, [className, uppercase, isLoading]);
+  }
+`;
+
+export const Button = ({ className, onClickFuction = null, text = null, isLoading = false }) => {
   
   return (
-    <button className={buttonClassName} onClick={onClickFuction}>{text}{isLoading && <Loader />}</button>
+    <ButtonStyle className={className} onClick={onClickFuction} isLoading={isLoading}>
+      {text}{isLoading && <Loader />}
+    </ButtonStyle>
   );
 };
