@@ -14,15 +14,15 @@ const SIZE = {
   },
 };
 
-const getMedia = (size, min) => `@media screen and (${min ? `min-width:` : `max-width:`} ${size}px)`
+const getMedia = (size, min = true) => `@media screen and (${min ? `min-width:` : `max-width:`} ${size}px)`
 
 export const DEVICE = {
   MIN: {
-    MOBILE: getMedia(SIZE.MIN.MOBILE, true),
-    TABLET: getMedia(SIZE.MIN.TABLET, true),
-    LAPTOP: getMedia(SIZE.MIN.LAPTOP, true),
-    DESCTOP: getMedia(SIZE.MIN.DESCTOP, true),
-    DESCTOP_L: getMedia(SIZE.MIN.DESCTOP_L, true),
+    MOBILE: getMedia(SIZE.MIN.MOBILE),
+    TABLET: getMedia(SIZE.MIN.TABLET),
+    LAPTOP: getMedia(SIZE.MIN.LAPTOP),
+    DESCTOP: getMedia(SIZE.MIN.DESCTOP),
+    DESCTOP_L: getMedia(SIZE.MIN.DESCTOP_L),
   },
   MAX: {
     MOBILE: getMedia(SIZE.MAX.MOBILE, false),
