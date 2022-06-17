@@ -3,17 +3,18 @@ import { uniqueId } from 'lodash';
 import { getService } from '../../api/service';
 import { useEffect, useState } from 'react';
 import { Loader } from '../../components/loader/Loader';
+import { COLORS } from '../../assets/colors/colors';
 import styled from 'styled-components';
 
 const Table = styled.table`
   border-collapse: collapse;
   width: 95%;
   text-align: left;
-  color: #75a2a5;
+  color: ${COLORS.GUMBO};
 `;
 
 const TableName = styled.tr`
-  background-color: #ffebd07e;
+  background-color: ${COLORS.KARRY_TRANSPARENT};
   font-size: medium;
   font-weight: bold;
   text-transform: uppercase;
@@ -21,8 +22,8 @@ const TableName = styled.tr`
 
 const Name = styled.td`
   border-style: solid;
-  border-width: 3px;
-  border-color: #ffebd0;
+  border-width: 2px;
+  border-color: ${COLORS.KARRY};
   padding: 10px;
 `;
 
@@ -53,14 +54,15 @@ const PriceTable = ({ priceList = [], isLoading = false }) => {
 export const Price = () => {
   const [priceList, setPriceList] = useState();
   const [isLoading, setIsLoading] = useState(true);
+
   const fetchData = async () => { 
     setPriceList(await getService());
     setIsLoading(false);
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchData();
-  }, [setPriceList])
+  }, [])
 
   return <PageBuilder main={<PriceTable priceList={priceList} isLoading={isLoading} />} />;
 };
