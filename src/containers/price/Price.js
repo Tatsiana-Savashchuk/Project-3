@@ -1,7 +1,6 @@
 import { PageBuilder } from '../../components/pageBuilder/PageBuilder';
 import { uniqueId } from 'lodash';
-import axios from 'axios';
-import { BACKEND_ADDRESS } from '../../constants/common';
+import { getService } from '../../api/service';
 import { useEffect, useState } from 'react';
 import { Loader } from '../../components/loader/Loader';
 import styled from 'styled-components';
@@ -31,39 +30,37 @@ const Cost = styled(Name)`
   text-align: center;
 `;
 
-const formList = async () => {
-  const response = await axios.get(BACKEND_ADDRESS + 'type');
-  return response.data;
-};
-
 const PriceTable = ({ priceList = [], isLoading = false }) => {
   if (isLoading) {
-    return <Loader />
+    return <Loader />;
   }
+
   return (
     <Table>
       <tbody>
         <TableName><Name>Service</Name><Cost>Cost</Cost></TableName>
-        {priceList.map(({ name, description }) => 
+        {priceList.map(({ name, description = '-' }) => 
           <tr key={uniqueId('price_')}>
             <Name>{name}</Name>
-            <Cost>{description || '-'}</Cost>
+            <Cost>{description}</Cost>
           </tr>  
         )}
       </tbody>
     </Table>
-  )
+  );
 };
 
 export const Price = () => {
   const [priceList, setPriceList] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const fetchData = async () => { 
-    setPriceList(await formList());
+    setPriceList(await getService());
     setIsLoading(false);
   }
+
   useEffect(()=>{
     fetchData();
   }, [setPriceList])
+
   return <PageBuilder main={<PriceTable priceList={priceList} isLoading={isLoading} />} />;
 };
