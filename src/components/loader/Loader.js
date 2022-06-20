@@ -24,7 +24,5 @@ const StyledLoader = styled.span`
 `;
 
 export const Loader = ({ size = 18 }) => {
-  return (
-    <StyledLoader size={size} />
-  );
+  return <StyledLoader size={size} />;
 };
