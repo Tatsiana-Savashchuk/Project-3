@@ -1,7 +1,28 @@
-import './Loader.css';
+import { COLORS } from '../../assets/colors/colors';
+import styled, { keyframes } from 'styled-components';
 
-export const Loader = () => {
-  return (
-    <span className="loader" />
-  );
+const loaderSpin = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
+
+const StyledLoader = styled.span`
+  display: inline-block;
+  animation: ${loaderSpin} 1.2s linear infinite;
+  margin: 0 0 0 6px;
+  border: 4px solid ${COLORS.BLACK_TRANSPARENT};
+  border-left-color: ${COLORS.GUMBO};
+  border-radius: 50%;
+  width: ${({ size }) => size}px;
+  height: ${({ size }) => size}px;
+  padding: 0;
+  background-color: transparent;
+`;
+
+export const Loader = ({ size = 18 }) => {
+  return <StyledLoader size={size} />;
 };
