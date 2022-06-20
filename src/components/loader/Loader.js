@@ -10,7 +10,7 @@ const loaderSpin = keyframes`
   }
 `;
 
-const LoaderStyle = styled.span`
+const StyledLoader = styled.span`
   display: inline-block;
   animation: ${loaderSpin} 1.2s linear infinite;
   margin: 0 0 0 6px;
@@ -25,6 +25,6 @@ const LoaderStyle = styled.span`
 
 export const Loader = ({ size = 18 }) => {
   return (
-    <LoaderStyle size={size} />
+    <StyledLoader size={size} />
   );
 };

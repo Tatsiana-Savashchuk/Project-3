@@ -3,7 +3,7 @@ import { COLORS } from '../../assets/colors/colors';
 import { DEVICE } from '../../assets/devices/devices';
 import styled from 'styled-components';
 
-const ButtonStyle = styled.button`
+const StyledButton = styled.button`
   align-items: center;
   display: flex;
   margin-top: 30px;
@@ -28,9 +28,9 @@ const ButtonStyle = styled.button`
 export const Button = ({ className, onClickFuction = null, text = null, isLoading = false }) => {
   
   return (
-    <ButtonStyle className={className} onClick={onClickFuction} isLoading={isLoading}>
+    <StyledButton className={className} onClick={onClickFuction} isLoading={isLoading}>
       {text}
       {isLoading && <Loader size={8} />}
-    </ButtonStyle>
+    </StyledButton>
   );
 };
