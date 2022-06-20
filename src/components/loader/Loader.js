@@ -17,13 +17,13 @@ const LoaderStyle = styled.span`
   border: 4px solid ${COLORS.BLACK_TRANSPARENT};
   border-left-color: ${COLORS.GUMBO};
   border-radius: 50%;
-  width: ${({ size }) => size + 'px'};
-  height: ${({ size }) => size + 'px'};
+  width: ${({ size }) => size}px;
+  height: ${({ size }) => size}px;
   padding: 0;
   background-color: transparent;
 `;
 
-export const Loader = ({ size = 14 }) => {
+export const Loader = ({ size = 18 }) => {
   return (
     <LoaderStyle size={size} />
   );

@@ -29,7 +29,8 @@ export const Button = ({ className, onClickFuction = null, text = null, isLoadin
   
   return (
     <ButtonStyle className={className} onClick={onClickFuction} isLoading={isLoading}>
-      {text}{isLoading && <Loader size={8} />}
+      {text}
+      {isLoading && <Loader size={8} />}
     </ButtonStyle>
   );
 };

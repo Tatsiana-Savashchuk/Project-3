@@ -33,7 +33,7 @@ const Cost = styled(Name)`
 
 const PriceTable = ({ priceList = [], isLoading = false }) => {
   if (isLoading) {
-    return <Loader size={20} />;
+    return <Loader />;
   }
 
   return (
