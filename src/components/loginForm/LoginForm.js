@@ -4,7 +4,29 @@ import { loginAuthentication } from '../../api/authentication';
 import { Button } from '../button/Button';
 import { Input } from '../input/Input';
 import { STORAGE_FIELDS } from '../../constants/common';
-import './LoginForm.css';
+import { COLORS } from '../../assets/colors/colors';
+import styled from 'styled-components';
+
+const StyledLoginForm = styled.div`
+  text-align: center;
+  color: ${COLORS.MATRIX};
+`;
+
+const InputName = styled.p`
+  text-transform: uppercase;
+  font-weight: bold;
+`;
+
+const LoginInput = styled(Input)`
+  border-color: ${COLORS.MACARONI_AND_CHEESE};
+  color: ${COLORS.MACARONI_AND_CHEESE};
+`;
+
+const ButtonWrapper = styled.div`
+  justify-content: center;
+  align-items: center;
+  display: flex;
+`;
 
 export const LoginForm = () => {
   const navigate = useNavigate();
@@ -38,14 +60,14 @@ export const LoginForm = () => {
   }
   
   return (
-    <div className="login-form">
-      <p className="uppercase bold">Login</p>
-      <Input type="text" className="login-form__input login" onChangeFunction={onLoginChange} disabled={isloading} />
-      <p className="uppercase bold">Password</p>
-      <Input type="password" className="login-form__input password" onChangeFunction={onPasswordChange} disabled={isloading} />
-      <div className='login-form__button-wrapper'>
-        <Button className="login-form__button" onClickFuction={verification} text='Sign in' uppercase isLoading={isloading} />
-      </div>
-    </div>
+    <StyledLoginForm>
+      <InputName>Login</InputName>
+      <LoginInput type="text" onChangeFunction={onLoginChange} disabled={isloading} />
+      <InputName>Password</InputName>
+      <LoginInput type="password" onChangeFunction={onPasswordChange} disabled={isloading} />
+      <ButtonWrapper>
+        <Button onClickFuction={verification} text='Sign in' uppercase isLoading={isloading} />
+      </ButtonWrapper>
+    </StyledLoginForm>
   );
 };

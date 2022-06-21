@@ -6,7 +6,6 @@ import { Contact } from './containers/contact/Contact.js';
 import { Login } from './containers/login/Login.js';
 import { UnauthorizedOnly } from "./components/unauthorizedOnly/UnauthorizedOnly.js";
 import { PATHS } from "./constants/common.js";
-import './App.css';
 
 export const App = () => {
   return(

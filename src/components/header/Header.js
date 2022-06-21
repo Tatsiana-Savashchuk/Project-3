@@ -1,9 +1,48 @@
 import { Link, useLocation } from "react-router-dom";
-import './Header.css';
 import { uniqueId } from 'lodash';
 import { isUserLogged } from "../../utils/storageData";
 import { logout } from "../../utils/storageData";
 import { STORAGE_FIELDS, PATHS } from "../../constants/common";
+import { COLORS } from '../../assets/colors/colors';
+import { DEVICE } from '../../assets/devices/devices';
+import styled from 'styled-components';
+
+const StyledHeader = styled.header`
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+`;
+
+const SiteHeader = styled.h1`
+  margin: 0;
+  color: ${COLORS.MATRIX};
+`;
+
+const List = styled.ul`
+  justify-content: space-between;
+  display: flex;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  color: ${COLORS.ZORBA_TRANSPARENT};
+`;
+
+const ListItem = styled.li`
+  margin: 0 10px;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: large;
+  color: ${COLORS.ZORBA_TRANSPARENT};
+  ${DEVICE.MIN.DESCTOP} {
+    :hover {
+      opacity: 0.6;
+    }
+  }
+`;
 
 export const Header = () => {
   const location = useLocation();
@@ -23,15 +62,15 @@ export const Header = () => {
   ];
 
   return (
-    <header className="header">
-      <h1>SAVA</h1>
+    <StyledHeader>
+      <SiteHeader>SAVA</SiteHeader>
       <nav>
-        <ul>
+        <List>
           {menuItemsArray.map(({ title, url }) => 
-            <li key={uniqueId('menu_item_')}><Link to={url} className="menu-item uppercase">{title}</Link></li>
+            <ListItem key={uniqueId('menu_item_')}><StyledLink to={url}>{title}</StyledLink></ListItem>
           )}
-        </ul>
+        </List>
       </nav>
-    </header>
+    </StyledHeader>
   );
 };
